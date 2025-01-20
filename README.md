@@ -34,7 +34,7 @@ use Avcodewizard\GooglePlaceApi\GooglePlacesApi;
 class PlaceController extends Controller
 {
 
-    public function searchPlace(Request $request,GooglePlacesApi $googlePlaces)
+    public function searchPlace(Request $request)
     {
         $query = $request->input('query');
         $googlePlaces = new GooglePlacesApi();
