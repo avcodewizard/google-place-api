@@ -9,9 +9,9 @@ class GooglePlacesApi
     protected $apiKey;
     protected $httpClient;
 
-    public function __construct(string $apiKey)
+    public function __construct()
     {
-        $this->apiKey = $apiKey;
+        $this->apiKey = env('GOOGLE_PLACES_API_KEY');
         $this->httpClient = new Client([
             'base_uri' => 'https://maps.googleapis.com/maps/api/place/',
         ]);
@@ -22,6 +22,18 @@ class GooglePlacesApi
         $response = $this->httpClient->get('autocomplete/json', [
             'query' => [
                 'input' => $query,
+                'key' => $this->apiKey
+            ]
+        ]);
+
+        return json_decode($response->getBody(), true);
+    }
+
+    function getPlaceDetails(string $placeId)
+    {
+        $response = $this->httpClient->get('details/json', [
+            'query' => [
+                'placeid' => $placeId,
                 'key' => $this->apiKey
             ]
         ]);

@@ -37,10 +37,25 @@ class PlaceController extends Controller
     public function searchPlace(Request $request,GooglePlacesApi $googlePlaces)
     {
         $query = $request->input('query');
-        $results = $this->googlePlaces->searchPlace($query);
+        $googlePlaces = new GooglePlacesApi();
+        $results = $googlePlaces->searchPlace($query);
 
         return response()->json($results);
     }
+}
+```
+
+### Finding Place Details
+
+You can find place details like full address, opening_hours, geometry(lat,lng), photos, rating, reviews etc., using placeId.
+
+```php
+public function placeDetails($placeId)
+{
+    $placeApi = new GooglePlacesApi();
+    $results = $placeApi->getPlaceDetails($placeId);
+
+    return response()->json($results);
 }
 ```
 

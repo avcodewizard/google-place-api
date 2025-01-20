@@ -11,10 +11,6 @@ class GooglePlaceApiServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/../config/googleplaces.php', 'googleplaces'
         );
-
-        $this->app->singleton(GooglePlacesApi::class, function ($app) {
-            return new GooglePlacesApi(config('googleplaces.api_key'));
-        });
     }
 
     public function boot()
