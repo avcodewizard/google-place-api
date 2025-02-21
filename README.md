@@ -1,5 +1,11 @@
 # Google Places API Laravel Package 
 
+<p align="center">
+<a href="https://packagist.org/packages/avcodewizard/google-place-api"><img src="https://img.shields.io/packagist/dt/avcodewizard/google-place-api" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/avcodewizard/google-place-api"><img src="https://img.shields.io/packagist/v/avcodewizard/google-place-api" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/avcodewizard/google-place-api"><img src="https://img.shields.io/packagist/l/avcodewizard/google-place-api" alt="License"></a>
+</p>
+
 A Laravel package for interacting with the Google Places API. This package allows you to search for cities, states, nearby shops, restaurants, and other places based on user input or geographic coordinates.
 
 ## Features
